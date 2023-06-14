@@ -12,7 +12,7 @@ export default function Items({ todos, setTodos }){
                 {todos.length === 0 && (
                 <h4 style={{ textAlign: "center", color: "red" }}>No items</h4>
                 )}
-                {todos.map((todo) => (
+                {todos.map((todo) => todo.title === "" ? deleteTodo(todo.id) : (
                 <li key={todo.id}>
                     <h3>{todo.title}</h3>
                     <button
